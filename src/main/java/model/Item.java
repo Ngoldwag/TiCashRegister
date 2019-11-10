@@ -11,4 +11,12 @@ public class Item {
     public String getDescription() {
         return description;
     }
+
+    public Item (String description, double price)
+    {
+       this.description = description;
+        this.price = price;
+    }
+
+
 }
