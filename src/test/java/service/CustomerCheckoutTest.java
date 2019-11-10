@@ -33,10 +33,10 @@ public class CustomerCheckoutTest {
        when(receipt.getStoreName()).thenReturn("store");
        when(receipt.getItemList()).thenReturn(list);
        CustomerCheckout customerCheckout = new CustomerCheckout("", "");
-       customerCheckout.scanAnItem(new Item());
+       customerCheckout.scanAnItem(new Item("banan", 2.99));
 
-       verify(receipt.add(new Item());
-       customerCheckout.scanAnItem(new Item(), 10);
+       verify(receipt.add(new Item("banana", 2.99));
+       customerCheckout.scanAnItem(new Item("banana", 2.99), 10);
 
        verify(receipt, times(10 )).add(any(Item.class));
        customerCheckout.endTransaction();

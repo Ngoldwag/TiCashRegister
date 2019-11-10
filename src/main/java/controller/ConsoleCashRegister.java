@@ -13,6 +13,8 @@ public class ConsoleCashRegister {
         String description;
         double price;
         Item item1;
+        String yesOrNo = "y";
+        //String cont;
 
         System.out.println("Please type the store you are visiting today");
         storeName = keyboard.nextLine();
@@ -20,7 +22,7 @@ public class ConsoleCashRegister {
         storeNum = keyboard.nextLine();
         CustomerCheckout customerCheckout = new CustomerCheckout(storeName, storeNum);
         System.out.println("Are you ready to scan an item? Please type Y or N");
-        String yesOrNo = keyboard.nextLine();
+        yesOrNo = keyboard.nextLine();
 
         while (yesOrNo.equalsIgnoreCase("Y")){
             System.out.println("What is the name of the item?");
@@ -30,8 +32,11 @@ public class ConsoleCashRegister {
             item1 = new Item(description, price);
 
             customerCheckout.scanAnItem(item1);
-            customerCheckout.scanAnItem(description, 4);
-            System.out.println("Are you ready to scan another item? Please type Y or N");}
+            customerCheckout.scanAnItem(item1, 4);
+            System.out.println("Are you ready to scan another item? Please type Y or N");
+            yesOrNo = keyboard.nextLine();
+
+        }
 
             customerCheckout.endTransaction();
 

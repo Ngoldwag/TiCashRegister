@@ -14,7 +14,7 @@ public class CustomerCheckout {
         receipt.add(itemToScan);
     }
 
-    public void scanAnItem(String itemToScan, double amount) throws IllegalAccessException {
+    public void scanAnItem(Item itemToScan, double amount) throws IllegalAccessException {
         for (int i = 0; i < amount; i++) {
             scanAnItem(itemToScan);
         }
