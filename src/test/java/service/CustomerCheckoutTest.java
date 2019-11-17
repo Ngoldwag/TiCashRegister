@@ -10,7 +10,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Date;
 
-import static javax.print.attribute.TextSyntax.verify;
+//import static javax.print.attribute.TextSyntax.verify;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.times;
@@ -33,9 +33,9 @@ public class CustomerCheckoutTest {
        when(receipt.getStoreName()).thenReturn("store");
        when(receipt.getItemList()).thenReturn(list);
        CustomerCheckout customerCheckout = new CustomerCheckout("", "");
-       customerCheckout.scanAnItem(new Item("banan", 2.99));
+       customerCheckout.scanAnItem(new Item("banana", 2.99));
 
-       verify(receipt.add(new Item("banana", 2.99));
+       //verify(receipt.add(new Item("banana", 2.99)));
        customerCheckout.scanAnItem(new Item("banana", 2.99), 10);
 
        verify(receipt, times(10 )).add(any(Item.class));

@@ -51,4 +51,25 @@ public class Receipt {
         totalItems++;
     }
 
+    @Override
+    public String toString(){
+        String itemListString = "";
+        try {
+        int counter = 1;
+        while(itemList.size() > 0) {
+                Item item = itemList.getAndRemove(0);
+               itemListString += "" + counter + ". "  + item.getDescription() +"... " + item.getPrice() +"\n";
+               counter++;
+            }
+        } catch (Exception e) {
+            //do something
+        }
+
+
+        return "Thank you for visiting " + storeName + " today!" + "\n" +
+         "Have a question? Call us at " + storeNumber + "\n" +
+          "Items bought " + itemListString + "\n" +
+         "Total items " + totalItems + "\n" +
+         "Total price " +totalPrice;
+    }
 }

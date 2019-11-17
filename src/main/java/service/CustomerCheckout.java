@@ -1,5 +1,6 @@
 package service;
 
+import CsLinkedList.CsLinkedList;
 import model.Item;
 import model.Receipt;
 
@@ -14,7 +15,7 @@ public class CustomerCheckout {
         receipt.add(itemToScan);
     }
 
-    public void scanAnItem(Item itemToScan, double amount) throws IllegalAccessException {
+    public void scanAnItem(Item itemToScan, int amount) throws IllegalAccessException {
         for (int i = 0; i < amount; i++) {
             scanAnItem(itemToScan);
         }
